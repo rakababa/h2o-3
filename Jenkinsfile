@@ -1,5 +1,7 @@
 @Library('h2o3-shared-lib@mr/ita-23-any-node') _
 
+import ai.h2o3.ci.Globals
+
 def SIZE_MEDIUM_LARGE = 'medium-large'
 def SIZE_SMALL = 'small'
 
