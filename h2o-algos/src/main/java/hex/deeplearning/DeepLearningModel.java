@@ -1142,6 +1142,8 @@ public class DeepLearningModel extends Model<DeepLearningModel,DeepLearningModel
         bodySb.i(2).p("CATS[ncats++] = c + CATOFFSETS[i];").nl();
       else
         bodySb.i(2).p("if (c != 0) CATS[ncats++] = c + CATOFFSETS[i] - 1;").nl();
+      bodySb.i(1).p("} else {").nl();  // set CAT level when encountering NAN
+      bodySb.i(2).p("CATS[ncats++] = CATOFFSETS[i+1]-1;").nl();
       bodySb.i(1).p("}").nl();
       bodySb.i().p("}").nl();
     }
